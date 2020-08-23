@@ -4,6 +4,7 @@ import './App.css';
 
 function App() {
 
+  const nayoks =['razzak','Alamgir','Jasim','Faruk','jafar','omarsani'];
   const products=[
     {name:'photoshop',price:'$90.99'},
     {name:'Illustrate',price:'60.99'},
@@ -16,8 +17,17 @@ function App() {
         <p>
           I am a react person
         </p>
-        <Product product={products[0]}></Product>
-        <Product product={products[1]}></Product>
+          <ul>
+              {
+                nayoks.map(nayok=><li>{nayok}</li>)
+             }
+             {
+               products.map(product=><li>{product.name}</li>)
+             }
+          </ul>
+             {
+               products.map(product=><Product product={product}></Product>)
+             }
         
         <Person name='Rubel Nayok' nayika='Mousumi'></Person>
         <Person name='Jasim' nayika='Shabana'></Person>
