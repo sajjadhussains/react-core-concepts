@@ -16,7 +16,8 @@ function App() {
         <p>
           I am a react person
         </p>
-        <Product name={products[0].name} price={products[0].price}></Product>
+        <Product product={products[0]}></Product>
+        <Product product={products[1]}></Product>
         
         <Person name='Rubel Nayok' nayika='Mousumi'></Person>
         <Person name='Jasim' nayika='Shabana'></Person>
@@ -30,6 +31,8 @@ function App() {
 
 function Product(props){
 
+  const {name,price} = props.product;
+
   const productStyle = {
     border:'1px solid gray',
     borderRadius:'5px',
@@ -41,8 +44,8 @@ function Product(props){
 
   return(
     <div style={productStyle}>
-      <h1>{props.name}</h1>
-      <h1>{props.price}</h1>
+      <h1>{name}</h1>
+      <h1>{price}</h1>
     </div>
   )
 }
