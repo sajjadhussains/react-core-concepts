@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import logo from './logo.svg';
 import './App.css';
 
@@ -14,9 +14,11 @@ function App() {
   return (
     <div className="App">
       <header className="App-header">
+        
         <p>
           I am a react person
         </p>
+        <Counter></Counter>
           <ul>
               {
                 nayoks.map(nayok=><li>{nayok}</li>)
@@ -37,6 +39,14 @@ function App() {
       </header>
     </div>
   );
+}
+function Counter(){
+  const [count, setCount] = useState(20);
+  return(
+    <div>
+      <h1>count: {count}</h1>
+    </div>
+  )
 }
 
 function Product(props){
@@ -72,5 +82,7 @@ function Person(props){
   </div>
   )
 }
+
+
 
 export default App;
